@@ -1,0 +1,33 @@
+class:: Temperature
+summary::  Control rate Ugen access to the temperature sensor of a Mac book pro.
+categories::  UGens>External Control
+
+
+Description::
+
+It return the temperature in Celsius or Fahrenheit.
+
+
+classmethods::
+
+method::kr
+
+argument::scale
+0 : Celsius |
+1 : Fahrenheit
+
+Examples::
+
+code::
+
+
+{ Temperature.kr(0).poll }.play;
+
+// modulate freq
+{ SinOsc.ar(Temperature.kr(0)) }.play;
+
+// modulate freq and phase
+{ SinOsc.ar(Temperature.kr(0),Temperature.kr(1)) }.play;
+
+
+::
